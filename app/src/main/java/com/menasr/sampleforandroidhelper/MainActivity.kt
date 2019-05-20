@@ -11,9 +11,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var andy=Andy(applicationContext)
+        Andy.init(this)
 
+        sampleText.text= Andy.res.string(R.string.app_name)
+        sampleText.setTextColor(Andy.res.color(R.color.colorAccent))
 
-        sampleText.text= andy.res.getString(R.string.app_name)
+        image.setImageDrawable(Andy.res.drawable(R.drawable.ic_directions_bike_black_24dp))
     }
 }

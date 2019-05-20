@@ -1,16 +1,30 @@
 package com.menasr.androidhelper
 
-import android.content.Context
-import android.support.annotation.NonNull
+import android.annotation.SuppressLint
+import android.app.Activity
+import java.lang.ref.WeakReference
 
-/**@param appContext pass Application context*/
-class Andy(@NonNull appContext: Context) : AndyException() {
+class Andy {
 
-    var res: ResourceLoader
+//    constructor(activity: Activity) : this() {
+//        activity.let {
+//            initializeThings(it)
+//        }
+//    }
 
-    init {
-        appContext.let { res = ResourceLoader(appContext) }
+    companion object {
+        private var instance: WeakReference<Andy>? = null
+
+        @SuppressLint("StaticFieldLeak")
+        lateinit var res: ResourceLoader
+
+        fun init(activity: Activity) {
+            if (instance == null) {
+                instance = WeakReference(Andy())
+
+                res = ResourceLoader(activity.applicationContext)
+            }
+        }
+
     }
-
-
 }

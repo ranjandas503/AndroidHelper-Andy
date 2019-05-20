@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SampleForAndroidHelper</string>
+
+    <string name="formattedString">Cuttent %s version is %s, As %s</string>
 </resources>
