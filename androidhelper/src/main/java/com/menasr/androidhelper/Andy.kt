@@ -18,11 +18,16 @@ class Andy {
         @SuppressLint("StaticFieldLeak")
         lateinit var res: ResourceLoader
 
+        lateinit var color: Color_
+        lateinit var converter: Converter
+
         fun init(activity: Activity) {
             if (instance == null) {
                 instance = WeakReference(Andy())
 
                 res = ResourceLoader(activity.applicationContext)
+                color = Color_()
+                converter = Converter()
             }
         }
 
