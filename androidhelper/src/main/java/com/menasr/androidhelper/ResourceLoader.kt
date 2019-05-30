@@ -10,7 +10,7 @@ import android.util.TypedValue
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 
-class ResourceLoader(var appCtx: Context) {
+class ResourceLoader(val appCtx:Context) {
 
     /**Get message from resources
      * @param msgId like "R.sting.<int id> to get the string msg"

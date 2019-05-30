@@ -39,6 +39,7 @@ dependencies {
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     api "com.android.support:appcompat-v7:$appCompactVersion"
+    api "com.android.support:design:$appCompactVersion"
 }
 repositories {
     mavenCentral()
