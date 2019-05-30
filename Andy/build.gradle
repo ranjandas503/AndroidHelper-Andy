@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+
+ext {
+    compileAndTargetVersion = 28
+    appCompactVersion = '28.0.0'
+}
+
+android {
+    compileSdkVersion compileAndTargetVersion
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion compileAndTargetVersion
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation "com.android.support:appcompat-v7:"+appCompactVersion
+    implementation "com.android.support:design:"+appCompactVersion
+}
