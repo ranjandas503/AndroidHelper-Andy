@@ -39,11 +39,11 @@ Or you can directly initialize the class and use the <b>object</b> like
 ```
 //Ex. For resources in Java
 
-Res res = new Res(this.getApplicationContext())
+AndyResources res = new AndyResources(this.getApplicationContext())
 
 or in kotlin
 
-val res = Res(this.applicationContext)
+val res = AndyResources(this.applicationContext)
 ```
 
 Rest is self explanatory, or your can just use <b>ctrl+space</b> to see method defination, In every method there is method declaration and details are present.
