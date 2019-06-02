@@ -1,1 +1,1 @@
-include ':app', ':AndyKtx', ':Andy'
+include ':app', ':andy', ':andyktx'
