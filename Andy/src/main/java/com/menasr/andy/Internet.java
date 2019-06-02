@@ -123,6 +123,7 @@ public class Internet {
                 && activeNetwork.getType() == ConnectivityManager.TYPE_WIFI;
     }
 
+    /**Check weather phone is in roaming or not*/
     private boolean checkForRoaming(Context context) {
         final TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
 

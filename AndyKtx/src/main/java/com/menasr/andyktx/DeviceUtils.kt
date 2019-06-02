@@ -13,12 +13,16 @@ import android.provider.Settings
 import android.support.annotation.RequiresPermission
 import android.telephony.TelephonyManager
 import android.text.TextUtils
+import android.util.Base64
 import android.view.View
 import java.io.File
 import java.net.InetAddress
 import java.net.NetworkInterface
 import java.net.SocketException
+import java.security.SignatureException
 import java.util.*
+import javax.crypto.Mac
+import javax.crypto.spec.SecretKeySpec
 
 class DeviceUtils {
 
@@ -334,6 +338,50 @@ class DeviceUtils {
                     Uri.parse(Const.RETURN_LINK + context.packageName)))
         }
 
+    }
+
+    /***
+     * Computes RFC 2104-compliant HMAC signature. This can be used to sign the Amazon S3
+     * request urls
+     *
+     * @param data The data to be signed.
+     * @param key  The signing key.
+     * @return The Base64-encoded RFC 2104-compliant HMAC signature.
+     * @throws java.security.SignatureException when signature generation fails
+     */
+    @Throws(SignatureException::class)
+    fun getHMac(data: String?, key: String): String? {
+
+        if (data == null) {
+            throw NullPointerException("Data to be signed cannot be null")
+        }
+
+        var result: String? = null
+        try {
+
+            val HMAC_SHA1_ALGORITHM = "HmacSHA1"
+
+            // get an hmac_sha1 key from the raw key bytes
+            val signingKey = SecretKeySpec(key.toByteArray(), HMAC_SHA1_ALGORITHM)
+
+            // get an hmac_sha1 Mac instance &
+            // initialize with the signing key
+            val mac = Mac.getInstance(HMAC_SHA1_ALGORITHM)
+            mac.init(signingKey)
+
+            // compute the hmac on input data bytes
+            val digest = mac.doFinal(data.toByteArray())
+
+            if (digest != null) {
+                // Base 64 Encode the results
+                result = Base64.encodeToString(digest, Base64.NO_WRAP)
+            }
+
+        } catch (e: Exception) {
+            throw SignatureException("Failed to generate HMAC : " + e.message)
+        }
+
+        return result
     }
 
 }

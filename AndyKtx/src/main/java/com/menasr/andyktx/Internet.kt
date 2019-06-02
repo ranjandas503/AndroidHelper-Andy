@@ -117,6 +117,7 @@ class Internet {
                 && activeNetwork.type == ConnectivityManager.TYPE_WIFI)
     }
 
+    /**Check weather phone is in roaming or not*/
     private fun checkForRoaming(context: Context): Boolean {
         val telephonyManager = context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
 

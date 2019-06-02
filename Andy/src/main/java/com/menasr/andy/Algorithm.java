@@ -4,6 +4,10 @@ import java.util.List;
 
 public class Algorithm {
 
+    private int[] array;
+    private int[] tempMergArr;
+
+    /**For bubble sort in Array*/
     public <T extends Comparable<T>> void bubbleSort(T[] inputArray, boolean isAscending) {
         T temp;
         boolean swapped = true;
@@ -21,6 +25,7 @@ public class Algorithm {
         }
     }
 
+    /**For bubble sort in List*/
     public <T extends Comparable<T>> void bubbleSort(List<T> inputArray, boolean isAscending) {
         T temp;
         boolean swapped = true;
@@ -38,13 +43,15 @@ public class Algorithm {
         }
     }
 
-    private int[] array;
-    private int[] tempMergArr;
-    private int length;
-
-    public void sort(int inputArr[]) {
+    /**
+     * Sort the given array by merge sort procedure
+     *
+     * @param inputArr array which is to be sorted
+     *                 currently, it supports only numbers
+     */
+    public void sort(int[] inputArr) {
         this.array = inputArr;
-        this.length = inputArr.length;
+        int length = inputArr.length;
         this.tempMergArr = new int[length];
         doMergeSort(0, length - 1);
     }
@@ -85,6 +92,23 @@ public class Algorithm {
             i++;
         }
 
+    }
+
+    /**
+     * This method filter the value in array, which is two frequent
+     *
+     * @param input  input array to filter
+     * @param output output array to filter
+     * @param filter factor to filter input and output(best is 0.05 to 0.25)
+     * @return output array on basis of filter
+     */
+    public float[] lowPassFilter(float[] input, float[] output, float filter) {
+        if (output == null) return input;
+
+        for (int i = 0; i < input.length; i++) {
+            output[i] = output[i] + filter * (input[i] - output[i]);
+        }
+        return output;
     }
 
 }

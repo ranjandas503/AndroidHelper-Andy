@@ -29,7 +29,7 @@ public class AndyToolbar {
      */
     public void setupToolbar(@NonNull Toolbar toolbar) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Context context = Andy.getBaseContext(toolbar);
+            Context context = Andy.LAYOUT.getBaseContext(toolbar);
             int statusBarSize = Andy.STATUS_BAR.getStatusBarHeight(context);
 
             if (toolbar.getLayoutParams() instanceof AppBarLayout.LayoutParams) {
@@ -120,7 +120,7 @@ public class AndyToolbar {
         if (view != null) {
             View background = view.findViewById(android.support.v7.appcompat.R.id.search_plate);
             if (background != null) {
-                Context context = Andy.getBaseContext(view);
+                Context context = Andy.LAYOUT.getBaseContext(view);
                 background.setBackgroundColor(Andy.COLOR.get(context, color));
             }
         }
@@ -135,7 +135,7 @@ public class AndyToolbar {
     public void setSearchViewSearchIcon(@Nullable View view, @DrawableRes int resId) {
         if (view == null) return;
 
-        Context context = Andy.getBaseContext(view);
+        Context context = Andy.LAYOUT.getBaseContext(view);
         Drawable drawable = Andy.IMAGE.getDrawable(context, resId);
         setSearchViewSearchIcon(view, drawable);
     }
@@ -179,7 +179,7 @@ public class AndyToolbar {
     public void setSearchViewCloseIcon(@Nullable View view, @DrawableRes int resId) {
         if (view == null) return;
 
-        Context context = Andy.getBaseContext(view);
+        Context context = Andy.LAYOUT.getBaseContext(view);
         Drawable drawable = Andy.IMAGE.get(context, resId);
         setSearchViewCloseIcon(view, drawable);
     }

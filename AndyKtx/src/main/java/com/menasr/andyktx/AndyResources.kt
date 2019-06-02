@@ -9,7 +9,7 @@ import android.support.v4.content.ContextCompat
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 
-class Res(private val appCtx: Context) {
+class AndyResources(private val appCtx: Context) {
 
     val resources: Resources
         get() = appCtx.resources
