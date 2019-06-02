@@ -6,12 +6,12 @@ Both <b>Java</b> and <b>Kotlin</b> version are persent in it. All the methods an
 
 For Java Use below dependency:-
 ```
-`implementation 'com.menasr.andy:andy:1.0.1'`
+</b>implementation 'com.menasr.andy:andy:1.0.1'</b>
 ```
 
 For Kotlin use below dependency:-
 ```
-`implementation 'com.menasr.andyktx:andyktx:1.0.1'`
+<b>implementation 'com.menasr.andyktx:andyktx:1.0.1'</b>
 ```
 
 or you can direct download the library and use it in you project.
@@ -19,7 +19,7 @@ or you can direct download the library and use it in you project.
 #### Prerequisites
 Initialize once in your app(for ex - Splash screen)
 ```
-**Andy.init(context);**
+<b>Andy.init(context);</b>
 ```
 
 After initialization you are ready to use it. You can use it in any <b>activity</b> or <b>fragment</b>, just by calling like..
@@ -35,7 +35,7 @@ Andy.DEVICES.<method name>
 and so on
 ```
 
-Or you can directly initialize the class and use the **object** like
+Or you can directly initialize the class and use the <b>object</b> like
 ```
 //Ex. For resources in Java
 
