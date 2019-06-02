@@ -7,16 +7,16 @@ Both <b>Java</b> and <b>Kotlin</b> version are persent in it. All the methods an
 #### Prerequisites
 Initialize once in your app(for ex - Splash screen)
 ```
-AppHelper.init(context);
+Andy.init(context);
 ```
 
 After initialization you are ready to use it. You can use it in any <b>activity</b> or <b>fragment</b>, just by calling like..
 ```
-AppHelper.IMAGE.<method name>;
-AppHelper.INTENT.<method name>
-AppHelper.MAPS.<method name>
-AppHelper.FILES.<method name>
-AppHelper.DEVICES.<method name>
+Andy.IMAGE.<method name>;
+Andy.INTENT.<method name>
+Andy.MAPS.<method name>
+Andy.FILES.<method name>
+Andy.DEVICES.<method name>
 .
 .
 .
