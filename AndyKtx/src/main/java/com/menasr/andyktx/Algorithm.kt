@@ -6,6 +6,7 @@ class Algorithm {
     private var tempMergArr: IntArray? = null
     private var length: Int = 0
 
+    /**For bubble sort in Array*/
     fun <T : Comparable<T>> bubbleSort(inputArray: Array<T>, isAscending: Boolean) {
         var temp: T
         var swapped = true
@@ -25,6 +26,7 @@ class Algorithm {
         }
     }
 
+    /**For bubble sort in List*/
     fun <T : Comparable<T>> bubbleSort(inputArray: MutableList<T>, isAscending: Boolean) {
         var temp: T
         var swapped = true
@@ -46,6 +48,12 @@ class Algorithm {
         }
     }
 
+    /**
+     * Sort the given array by merge sort procedure
+     *
+     * @param inputArr array which is to be sorted
+     *                 currently, it supports only numbers
+     */
     fun sort(inputArr: IntArray) {
         this.array = inputArr
         this.length = inputArr.size

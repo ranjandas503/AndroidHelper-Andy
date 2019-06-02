@@ -26,7 +26,7 @@ class AndyToolbar {
      */
     fun setupToolbar(toolbar: Toolbar) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            val context = Andy.getBaseContext(toolbar)
+            val context = Andy.LAYOUT.getBaseContext(toolbar)
             val statusBarSize = Andy.STATUS_BAR.getStatusBarHeight(context)
 
             if (toolbar.layoutParams is AppBarLayout.LayoutParams) {
@@ -118,7 +118,7 @@ class AndyToolbar {
         if (view != null) {
             val background = view.findViewById<View>(android.support.v7.appcompat.R.id.search_plate)
             if (background != null) {
-                val context = Andy.getBaseContext(view)
+                val context = Andy.LAYOUT.getBaseContext(view)
                 background.setBackgroundColor(Andy.COLOR.get(context, color))
             }
         }
@@ -133,7 +133,7 @@ class AndyToolbar {
     fun setSearchViewSearchIcon(view: View?, @DrawableRes resId: Int) {
         if (view == null) return
 
-        val context = Andy.getBaseContext(view)
+        val context = Andy.LAYOUT.getBaseContext(view)
         val drawable = Andy.IMAGE.getDrawable(context, resId)
         setSearchViewSearchIcon(view, drawable)
     }
@@ -175,7 +175,7 @@ class AndyToolbar {
     fun setSearchViewCloseIcon(view: View?, @DrawableRes resId: Int) {
         if (view == null) return
 
-        val context = Andy.getBaseContext(view)
+        val context = Andy.LAYOUT.getBaseContext(view)
         val drawable = Andy.IMAGE.get(context, resId)
         setSearchViewCloseIcon(view, drawable)
     }

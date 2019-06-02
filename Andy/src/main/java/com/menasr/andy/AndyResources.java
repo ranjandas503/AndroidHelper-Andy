@@ -10,10 +10,10 @@ import android.support.v4.content.ContextCompat;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
-public class Res {
+public class AndyResources {
     private Context appCtx;
 
-    public Res(Context context) {
+    public AndyResources(Context context) {
         this.appCtx = context;
     }
 
