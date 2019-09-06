@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.WindowManager
 
+@Suppress("unused", "SENSELESS_COMPARISON", "MemberVisibilityCanBePrivate")
 class StatusBar {
 
     /**
@@ -131,12 +132,3 @@ class StatusBar {
         } else 0
     }
 }
-/**
- * Method to set Status Bar Color
- *
- * @param context context of apllication
- * @param color   Resources color id i.e., R.color.'color_name'
- *
- *
- * Make sure context is not null
- */

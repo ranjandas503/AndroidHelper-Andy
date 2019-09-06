@@ -12,6 +12,7 @@ import android.support.design.widget.NavigationView
 import android.support.v7.app.AppCompatActivity
 import android.view.WindowManager
 
+@Suppress("unused")
 class NavigationBar {
 
     enum class NavigationBarTranslucent {
@@ -49,8 +50,6 @@ class NavigationBar {
                     setNavigationBarColor(context, Color.BLACK)
                 }
                 NavigationBarTranslucent.PORTRAIT_LANDSCAPE -> (context as AppCompatActivity).window.addFlags(
-                        WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
-                else -> (context as AppCompatActivity).window.addFlags(
                         WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
             }
         }
@@ -90,8 +89,7 @@ class NavigationBar {
      */
     fun hideNavigationViewScrollBar(navigationView: NavigationView) {
         val navigationMenuView = navigationView.getChildAt(0) as NavigationMenuView
-        if (navigationMenuView != null)
-            navigationMenuView.isVerticalScrollBarEnabled = false
+        navigationMenuView.isVerticalScrollBarEnabled = false
     }
 
     companion object {

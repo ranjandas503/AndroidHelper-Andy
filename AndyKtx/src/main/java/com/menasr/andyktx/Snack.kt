@@ -8,6 +8,7 @@ import android.support.design.widget.Snackbar
 import android.view.View
 import android.widget.TextView
 
+@Suppress("unused")
 class Snack {
 
     /**
@@ -55,7 +56,7 @@ class Snack {
      * @param style    Typeface.BOLD or Typeface.ITALIC or any another
      * @param typeface custom typeface
      */
-    fun changeSnakBarFont(snackbar: Snackbar, style: Int, typeface: Typeface) {
+    fun changeSnackBarFont(snackbar: Snackbar, style: Int, typeface: Typeface) {
         val tv = snackbar.view.findViewById<View>(android.support.design.R.id.snackbar_text) as TextView
         tv.setTextColor(Color.WHITE)
         tv.setTypeface(typeface, style)

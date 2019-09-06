@@ -22,6 +22,7 @@ import java.io.InputStreamReader
 import java.io.OutputStream
 import java.util.ArrayList
 
+@Suppress("unused", "MemberVisibilityCanBePrivate")
 class Media {
 
     /**
@@ -349,40 +350,21 @@ class Media {
      * Returns true if the mime type is a standard image mime type
      */
     fun isImage(mimeType: String?): Boolean {
-        return if (mimeType != null) {
-            if (mimeType.startsWith("image/"))
-                true
-            else
-                false
-        } else
-            false
+        return mimeType?.startsWith("image/") ?: false
     }
 
     /**
      * Returns true if the mime type is a standard audio mime type
      */
     fun isAudio(mimeType: String?): Boolean {
-        return if (mimeType != null) {
-            if (mimeType.startsWith("audio/"))
-                true
-            else
-                false
-        } else
-            false
+        return mimeType?.startsWith("audio/") ?: false
     }
 
     /**
      * Returns true if the mime type is a standard video mime type
      */
     fun isVideo(mimeType: String?): Boolean {
-        return if (mimeType != null) {
-            if (mimeType.startsWith("video/"))
-                true
-            else
-                false
-        } else {
-            false
-        }
+        return mimeType?.startsWith("video/") ?: false
     }
 
     /**
@@ -435,7 +417,7 @@ class Media {
      * @param directoryPath path in which it is to be stored
      * @return Path of the image file that has been written successfully.
      */
-    fun writeImage(ctx: Context, imageData: ByteArray, directoryPath: File): String {
+    fun writeImage(imageData: ByteArray, directoryPath: File): String {
 
         val FILE_NAME = "photograph.jpeg"
         var dir: File? = null

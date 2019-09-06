@@ -5,6 +5,7 @@ import android.widget.TextView
 
 import java.util.Arrays
 
+@Suppress("unused", "ReplaceSizeCheckWithIsNotEmpty")
 class StringHelper {
 
     val nameRegex: String
@@ -58,7 +59,7 @@ class StringHelper {
      * @return the string with first letter upper.
      */
     fun upperFirstLetter(s: String?): String {
-        if (s == null || s.length == 0) return ""
+        if (s == null || s.isEmpty()) return ""
         return if (!Character.isLowerCase(s[0])) s else (s[0].toInt() - 32).toChar().toString() + s.substring(1)
     }
 
@@ -69,7 +70,7 @@ class StringHelper {
      * @return the string with first letter lower.
      */
     fun lowerFirstLetter(s: String?): String {
-        if (s == null || s.length == 0) return ""
+        if (s == null || s.isEmpty()) return ""
         return if (!Character.isUpperCase(s[0])) s else (s[0].toInt() + 32).toChar().toString() + s.substring(1)
     }
 
