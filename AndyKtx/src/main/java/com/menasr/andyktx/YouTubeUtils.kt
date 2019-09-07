@@ -1,3 +1,5 @@
+@file:Suppress("RegExpRedundantEscape")
+
 package com.menasr.andyktx
 
 import android.net.Uri
@@ -6,6 +8,7 @@ import android.text.TextUtils
 import java.net.MalformedURLException
 import java.net.URL
 
+@Suppress("unused")
 class YouTubeUtils {
 
     /**
@@ -27,10 +30,10 @@ class YouTubeUtils {
      * Creates thubmnail url for a given video ID.
      *
      * @param videoId video id
-     * @param quality use **Quality.'name'** for quality
+     * @param qualityy use **Quality.'name'** for quality
      */
-    fun createThumbnailUrl(videoId: String, quality: String?): String {
-        var quality = quality
+    fun createThumbnailUrl(videoId: String, qualityy: String?): String {
+        var quality = qualityy
 
         if (quality == null)
             quality = Quality.THUMBNAIL_QUALITY_DEFAULT
@@ -56,11 +59,7 @@ class YouTubeUtils {
 
         val uri = Uri.parse(url)
         val authority = uri.authority
-        return if (!TextUtils.isEmpty(authority) && authority!!.contains("youtube.com")) {
-            true
-        } else {
-            false
-        }
+        return !TextUtils.isEmpty(authority) && authority!!.contains("youtube.com")
     }
 
     /**
@@ -106,10 +105,10 @@ class YouTubeUtils {
      */
     interface Quality {
         companion object {
-            val THUMBNAIL_QUALITY_DEFAULT = "default"
-            val THUMBNAIL_QUALITY_MQ = "mqdefault"
-            val THUMBNAIL_QUALITY_HQ = "hqdefault"
-            val THUMBNAIL_QUALITY_SD = "sddefault"
+            const val THUMBNAIL_QUALITY_DEFAULT = "default"
+            const val THUMBNAIL_QUALITY_MQ = "mqdefault"
+            const val THUMBNAIL_QUALITY_HQ = "hqdefault"
+            const val THUMBNAIL_QUALITY_SD = "sddefault"
         }
     }
 }

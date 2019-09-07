@@ -8,7 +8,9 @@ import android.os.Looper
 import android.view.View
 import android.view.ViewAnimationUtils
 import android.view.animation.Animation
+import kotlin.math.hypot
 
+@Suppress("unused")
 class AndyAnimation {
 
     /**
@@ -20,7 +22,7 @@ class AndyAnimation {
         val cx = view.width / 2
         val cy = view.height / 2
 
-        val finalRadius = Math.hypot(cx.toDouble(), cy.toDouble()).toFloat()
+        val finalRadius = hypot(cx.toDouble(), cy.toDouble()).toFloat()
 
         val anim = ViewAnimationUtils.createCircularReveal(view, cx, cy, 0f, finalRadius)
 
@@ -37,7 +39,7 @@ class AndyAnimation {
         val cx = view.width / 2
         val cy = view.height / 2
 
-        val initialRadius = Math.hypot(cx.toDouble(), cy.toDouble()).toFloat()
+        val initialRadius = hypot(cx.toDouble(), cy.toDouble()).toFloat()
 
         val anim = ViewAnimationUtils.createCircularReveal(view, cx, cy, initialRadius, 0f)
 
@@ -73,7 +75,7 @@ class AndyAnimation {
 
     /**Provide the animation and view , to start the animation,
      * It will run in seperate thread
-     * @param animId provide the animation id which is present in anim folder
+     * @param animation provide the animation id which is present in anim folder
      * @param view view on which animation is to be performed*/
     fun startAnimationInSeperateThread(animation: Animation, view: View) {
         Handler(Looper.getMainLooper()).post { view.startAnimation(animation) }

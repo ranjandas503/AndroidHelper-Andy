@@ -2,14 +2,17 @@ package com.menasr.andyktx
 
 import java.util.*
 
+@Suppress("unused")
 class AndyNumber {
     /**
      * Get factorial of a number
      */
     fun getFatorial(number: Int): Long {
-        return if (number == 0) 0
-        else if (number == 1) 1
-        else number * getFatorial(number - 1)
+        return when (number) {
+            0 -> 0
+            1 -> 1
+            else -> number * getFatorial(number - 1)
+        }
     }
 
     /**
