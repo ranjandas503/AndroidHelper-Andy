@@ -46,6 +46,10 @@ or in kotlin
 val res = AndyResources(this.applicationContext)
 ```
 
+####There are some other class, which object are not created by default,
+1. PermissionManager - Responsible for handling all permissions upto android Pie(28). Just create an object for use. The class contains all the necessay documents for help. Please, refer to class docs for usage(For both java and Kotlin).
+
+
 Rest is self explanatory, or your can just use <b>ctrl+space</b> to see method defination, In every method there is method declaration and details are present.
 
 ### Upcoming releases
